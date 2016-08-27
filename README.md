@@ -1,6 +1,8 @@
 # textobj-backticks
 
-This plugin provides text objects for blocks inside backticks.
+This plugin provides text objects for blocks inside backticks. You need
+to have [vim-textobj-user](https://github.com/kana/vim-textobj-user) installed
+to use it.
 
 ## Usage
 
@@ -42,6 +44,8 @@ this plugin you just save a keystroke and get the inside-but-without-whitespace
 functionality.
 
 ## Installation
+
+Install [vim-textobj-user](https://github.com/kana/vim-textobj-user).
 
 Copy the files to your plugin directory, or use 
 [pathogen](https://github.com/tpope/vim-pathogen).
