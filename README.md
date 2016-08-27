@@ -15,7 +15,7 @@ The special one:
 * `` ii` ``: All the text inside the backticks, excluding all the space after
 the opening backtick and all the space before the closing backtick.
 
-This can be useful, for example, when editing HTML templaes inside backticks
+This can be useful, for example, when editing HTML templates inside backticks
 in javascript:
 
 ```javascript
