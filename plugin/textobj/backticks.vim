@@ -36,7 +36,7 @@ function! s:BackticksInsideInside()
   " If the char under the cursor is a backtick,
   " stay there. Otherwise go back looking for a
   " backtick
-  let l:char_under_cursor = s:GetCharUnderCursor()
+  let l:char_under_cursor = matchstr(getline('.'), '\%'.col('.').'c.')
   if l:char_under_cursor !=# '`'
     execute "normal! ?\\v`\<cr>"
   endif
@@ -53,20 +53,6 @@ function! s:BackticksInsideInside()
   let l:tail_pos = getpos('.')
 
   return ['v', l:head_pos, l:tail_pos]
-endfunction
-
-function! s:GetCharUnderCursor()
-  " Save the value in the 'a' register
-  let l:backup = @a
-  " Yank the char under the cursor into
-  " the 'a' register
-  normal! "ayl
-  " Save that value
-  let l:char_under_cursor = @a
-  " Restore the original value of the 'a' register
-  let @a = l:backup
-  " And return the yanked value
-  return l:char_under_cursor
 endfunction
 
 let &cpoptions = s:save_cpo
